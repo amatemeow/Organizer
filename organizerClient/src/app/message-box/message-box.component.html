@@ -1,0 +1,4 @@
+<div (animationend)="messageService.remove()" *ngIf="messageService.display" class="py-3 px-5 bg-teal-400 shadow-block-sm rounded-md text-white
+    animate-message-box">
+    <span *ngIf="messageService.message">{{messageService.message.text}}</span>
+</div>

@@ -1,0 +1,7 @@
+<div #navContainer class="w-full flex gap-5 justify-between items-center px-5 md:px-10 py-5">
+    <span #appTitle class="font-bold text-xl hidden md:block"><a [routerLink]="['/home']" routerLinkActive="router-link-active">Organizer</a></span>
+    <div class="relative ml-auto flex hover:animate-spin group">
+        <i class="bi bi-gear-fill text-gray-700 text-xl flex items-center group-hover:scale-110 duration-200"></i>
+        <a [routerLink]="['/settings']" class="absolute inset-0 w-full h-full z-10"></a>
+    </div>
+</div>

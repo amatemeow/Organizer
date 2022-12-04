@@ -1,0 +1,47 @@
+<div #homeContainer class="flex flex-col md:flex-row gap-5 p-5 lg:p-20 w-full h-full">
+    <div #calendarHomeContainer class="flex flex-col gap-10 w-full md:w-1/2">
+        <div #todayContainer>
+            <h1 #todayTitle class="font-bold text-6xl">TODAY</h1>
+            <h2 #todayDate class="font-medium text-4xl">{{today | date: 'EEEE, d of MMMM'}}</h2>
+            <h2 #todayTime class="font-bold text-6xl">{{today | date: 'shortTime'}}</h2>
+        </div>
+        <div #thisMonthHomeContaiener class="hidden lg:flex relative w-full h-full max-h-[500px] max-w-[600px] rounded-xl shadow-block-md
+            hover:scale-105 duration-300 group justify-center items-center">
+            <a [routerLink]="['/calendar']" class="absolute inset-0 w-full h-full z-10"></a>
+            <span class="tooltip hidden group-hover:block animate-move-in-top left-[calc(100%-100px)]">Calendar</span>
+            <app-current-month></app-current-month>
+        </div>
+    </div>
+    <div #homeMenu class="flex w-full h-full md:w-1/2 justify-center items-center">
+        <div class="grid grid-cols-2 gap-10">
+            <div class="relative lg:hidden h-[100px] w-[100px] lg:h-[150px] lg:w-[150px] flex justify-center items-center rounded-xl shadow-block-md
+                hover:scale-105 duration-300 group">
+                <a [routerLink]="['/calendar']" class="absolute inset-0 w-full h-full z-10"></a>
+                <i class="bi bi-calendar-date text-4xl lg:text-6xl"></i>
+                <span class="tooltip hidden group-hover:block animate-move-in-top">Calendar</span>
+                <div class="absolute left-0 h-full w-[10px] lg:w-[15px] bg-red-400 rounded-l-lg"></div>
+            </div>
+            <div class="relative h-[100px] w-[100px] lg:h-[150px] lg:w-[150px] flex justify-center items-center rounded-xl shadow-block-md
+                hover:scale-105 duration-300 group hover:shadow-teal-300">
+                <a [routerLink]="['/tasks']" class="absolute inset-0 w-full h-full z-10"></a>
+                <i class="bi bi-check2-square text-4xl lg:text-6xl"></i>
+                <span class="tooltip hidden group-hover:block animate-move-in-top">Tasks</span>
+                <div class="absolute left-0 h-full w-[10px] lg:w-[15px] bg-teal-300 rounded-l-lg"></div>
+            </div>
+            <div class="relative h-[100px] w-[100px] lg:h-[150px] lg:w-[150px] flex justify-center items-center rounded-xl shadow-block-md
+                hover:scale-105 duration-300 group hover:shadow-orange-400">
+                <a [routerLink]="['/notes']" class="absolute inset-0 w-full h-full z-10"></a>
+                <i class="bi bi-stickies text-4xl lg:text-6xl"></i>
+                <span class="tooltip hidden group-hover:block animate-move-in-top">Notes</span>
+                <div class="absolute left-0 h-full w-[10px] lg:w-[15px] bg-orange-400 rounded-l-lg"></div>
+            </div>
+            <div class="relative h-[100px] w-[100px] lg:h-[150px] lg:w-[150px] flex justify-center items-center rounded-xl shadow-block-md
+                hover:scale-105 duration-300 group hover:shadow-blue-500">
+                <a [routerLink]="['/links']" class="absolute inset-0 w-full h-full z-10"></a>
+                <i class="bi bi-link-45deg text-4xl lg:text-6xl"></i>
+                <span class="tooltip hidden group-hover:block animate-move-in-top">Links</span>
+                <div class="absolute left-0 h-full w-[10px] lg:w-[15px] bg-blue-500 rounded-l-lg"></div>
+            </div>
+        </div>
+    </div>
+</div>
