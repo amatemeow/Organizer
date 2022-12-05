@@ -1,0 +1,1 @@
+export type Filter = 'done' | 'important' | 'unmuted' | 'undone' | 'muted' | 'unimportant';

@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Filter } from '../entities/filter';
+import { Filters } from '../entities/filters';
 
 @Component({
   selector: 'app-filter',
@@ -6,5 +8,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./filter.component.css']
 })
 export class FilterComponent {
-  filters = [ 'filter1', 'filter2' ]
+  @Input() filters = Filters;
 }

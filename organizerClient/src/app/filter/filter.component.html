@@ -1,7 +1,15 @@
-<div class="flex gap-2 justify-center items-center">
-    <div *ngFor="let filter of filters" class="flex gap-1 items-center">
-        <input type="checkbox" class="form-checkbox">
-        <span>{{filter}}</span>
+<div class="relative group">
+    <button class="flex gap-2 px-3 py-1 rounded-lg peer">
+        <i class="bi bi-funnel-fill group-hover:text-teal-300 duration-300"></i>
+        <span class="hidden lg:inline">Filters</span>
+    </button>
+    <div class="hidden absolute right-0 top-[calc(100%+20px)] md:top-auto shadow-block-sm bg-white rounded-lg p-5 float-right peer-focus:flex hover:flex">
+        <div class="flex flex-col gap-2 justify-center items-start">
+            <div *ngFor="let filter of filters" class="flex gap-1 justify-center items-center">
+                <input type="checkbox" class="form-checkbox rounded-lg">
+                <span>{{filter}}</span>
+            </div>
+        </div>
     </div>
 </div>
 
