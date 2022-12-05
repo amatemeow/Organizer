@@ -1,1 +1,38 @@
-<p>notes works!</p>
+<div class="flex flex-col w-full h-full min-h-0">
+    <div #notesNavbar class="flex w-full p-5 lg:p-10 z-10">
+        <nav class="flex w-full justify-between items-center p-2 lg:p-5 shadow-block-sm rounded-lg ">
+            <button (click)="goBack()" class="flex gap-2 px-3 py-1 rounded-lg group">
+                <i class="bi bi-arrow-left icon-bold group-hover:text-teal-300 duration-300"></i>
+                <span class="hidden lg:inline">Back</span>
+            </button>
+            <app-search-box class="md:w-1/2 relative"></app-search-box>
+            <app-filter [filters]="['important', 'unimportant']"></app-filter>
+        </nav>
+    </div>
+    <div #notesContainer class="flex flex-col gap-10 w-full h-full min-h-0 p-5 lg:p-10 overflow-y-auto">
+        <h2 *ngIf="folders" class="text-xl font-medium">Folders</h2>
+        <div #foldersList class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+            <div *ngFor="let folder of folders" class="max-w-[150px] flex flex-col gap-2 items-center justify-center">
+                <div class="folder"></div>
+                <span class="block line-clamp-1 text-center">{{folder.title}}</span>
+            </div>
+        </div>
+        <h2 *ngIf="notes" class="text-xl font-medium">Notes</h2>
+        <div #notesList class="h-full grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+            <div *ngFor="let note of notes" class="relative flex flex-col gap-1 md:gap-3 items-start py-3 pl-3 md:pl-7 pr-3 bg-white shadow-block-sm rounded-lg
+                hover:translate-x-[-5px] hover:shadow-block-md duration-500 w-[150px] md:w-[250px] h-[200px] md:h-[300px]">
+                <a class="absolute inset-0 h-full w-full" href=""></a>
+                <div class="absolute flex items-center justify-center inset-0 h-full w-2 md:w-5 bg-orange-400 rounded-l-lg"></div>
+                <div class="w-full flex flex-row-reverse items-center">
+                    <span class="p-2 md:p-1 z-10 text-blue-500 hover:text-teal-300 duration-300 cursor-pointer self-end ml-auto text-base md:text-xl" (click)="toggleImportance(note)">
+                        <i *ngIf="!note.important" class="bi bi-circle"></i>
+                        <i *ngIf="note.important" class="bi bi-circle-fill"></i>
+                    </span> 
+                    <span class="font-medium text-sm md:text-lg line-clamp-1">{{note.title}}</span>
+                </div>
+                <p class="line-clamp-3 md:line-clamp-6 text-sm md:text-base">{{note.description}}</p>
+                <span class="font-light text-sm mt-auto self-end">{{note.modified | date: 'dd.MM.yy'}}</span>
+            </div>
+        </div>
+    </div>
+</div>

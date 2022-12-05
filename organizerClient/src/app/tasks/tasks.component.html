@@ -17,9 +17,9 @@
             </div>
         </div> -->
         <h2 *ngIf="tasks" class="text-xl font-medium">Tasks</h2>
-        <div #tasksList class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4">
-            <div *ngFor="let task of tasks" class="relative flex gap-3 items-center justify-between py-3 pl-20 pr-5 bg-white shadow-block-md rounded-lg
-                hover:translate-x-[-5px] duration-300">
+        <div #tasksList class="h-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4">
+            <div *ngFor="let task of tasks" class="relative flex gap-3 items-center justify-between py-3 pl-20 pr-5 bg-white shadow-block-sm rounded-lg
+                hover:translate-x-[-5px] hover:shadow-block-md duration-500 h-fit">
                 <a class="absolute inset-0 h-full w-full" href=""></a>
                 <div class="absolute flex items-center justify-center left-0 h-full w-14 bg-teal-300 rounded-l-lg">
                     <input type="checkbox" class="form-checkbox rounded-full w-6 h-6 border-none" [(ngModel)]="task.done">

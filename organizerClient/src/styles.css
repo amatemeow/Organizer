@@ -29,7 +29,7 @@ app-root {
     position: relative;
 }
 
-app-home, app-tasks {
+app-home, app-tasks, app-notes, app-settings, app-links {
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -44,7 +44,6 @@ app-footer {
 .tooltip {
     position: absolute;
     z-index: 10;
-    top: -40px;
     padding: 2px 5px;
     background-color: black;
     color: white;
@@ -67,27 +66,35 @@ app-footer {
 }
 
 .folder {
-    height: 100px;
-    max-width: 150px;
+    height: 60px;
+    width: 100px;
     position: relative;
-    @apply p-3 bg-yellow-100 shadow-block-md flex flex-col justify-center items-center rounded-b-lg rounded-tr-lg duration-300;
+    @apply p-3 bg-teal-300 shadow-block-sm flex flex-col justify-center items-center rounded-lg duration-500;
 }
 
 .folder::before {
     content: "";
     position: absolute;
-    left: 0;
-    top: -10px;
-    height: 10px;
-    width: 30%;
-    @apply rounded-t-lg bg-yellow-100;
+    left: 20px;
+    top: 0;
+    height: 15px;
+    width: 20%;
+    @apply rounded-b-sm bg-white;
 }
 
 .folder:hover {
     transform: translateY(-5px);
-    /* @apply shadow-teal-300; */
+    @apply shadow-block-md;
 }
 
-.folder > p {
+/* .folder > p {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    top: calc(100% + 10px);
     @apply line-clamp-1;
+} */
+
+.bi {
+    transform: translate3d( 0, 0, 0);
 }

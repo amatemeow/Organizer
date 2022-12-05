@@ -9,7 +9,7 @@ import { SearchService } from '../search.service';
 export class SearchBoxComponent {
   searchText: string = '';
 
-  constructor(private search: SearchService) {
+  constructor(public search: SearchService) {
     this.search.searchText = this.searchText;
   }
 }
